@@ -1,0 +1,54 @@
+{
+    "name": "playerInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "af6980b6-f712-49a8-b743-0708fb29c880",
+            "actions": [
+                {
+                    "name": "Horizontal Left",
+                    "type": "Button",
+                    "id": "e29eb718-ed14-4388-b87b-fbc8c0d7baa8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HorizontalRight",
+                    "type": "Button",
+                    "id": "d1d31e69-7773-48c7-88be-8d4e1df97988",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0adbd04e-cbb4-41fb-b0a0-257f046ac8e0",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2d2db20f-1bb3-473e-b768-c1de857d0f72",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
