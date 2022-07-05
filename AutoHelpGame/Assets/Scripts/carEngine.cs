@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class carEngine : Car
 {
@@ -10,9 +11,10 @@ public class carEngine : Car
     private float accelTime;
     private float frictionTime;
     private float deaccelTime;
+    private float consumeTime;
 
     private Vector3 stopLocation ;
-
+    
     bool stopped = false;
 
     //boost
@@ -21,8 +23,9 @@ public class carEngine : Car
         accelTime = Intervals[0];
         frictionTime = Intervals[1];
         deaccelTime = Intervals[2];
+        consumeTime = Intervals[3];
         CarBody = this.GetComponent<Rigidbody2D>();
-        stopLocation = this.transform.position;
+        FuelBar =  GameObject.FindWithTag("FuelBar").GetComponent<Slider>();
     }
     // Start is called before the first frame update
     void Start()
@@ -120,6 +123,17 @@ public class carEngine : Car
            JointMotor2D motor = new JointMotor2D{motorSpeed = Speed*direction , maxMotorTorque = 10000};
            BackWheel.motor=motor;
            FrontWheel.motor=motor;
+          
+           
+            if (consumeTime > 0 )
+            {
+                consumeTime -= Time.deltaTime;
+            }
+            else
+            {
+                FuelBar.value -= FuelConsume;
+                consumeTime+=Intervals[3];
+            }
         }
         else
         {
@@ -138,6 +152,10 @@ public class carEngine : Car
         else
         {
             direction=-1;
+        }
+        if(engineOn == false)
+        {
+            consumeTime = Intervals[3];
         }
 
    }

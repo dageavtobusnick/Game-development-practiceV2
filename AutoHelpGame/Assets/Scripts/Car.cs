@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Car : MonoBehaviour
 {
-    
+    #region Specs
     [SerializeField]
     private float speed;
 
@@ -18,36 +19,50 @@ public abstract class Car : MonoBehaviour
     private float brakesPower= 150;
 
     [SerializeField]
-    private float gasTank=100;
+    private float fuelTank=100;
+
+    [SerializeField]
+    private float fuelConsume=100;
+#endregion
+    
+    [SerializeField]
+    Slider fuelBar;
+
     public bool engineOn = false;
     public bool brakesOn = false;
 
+    #region Body
+    Rigidbody2D carBody;
     [SerializeField]
     WheelJoint2D backWheel;
     [SerializeField]
     WheelJoint2D frontWheel;
+#endregion
+    
      //[Header("Button Settings")]
     [Tooltip("accel, brakes, friction,deaccel")]
     [SerializeField]
-    List<float> intervals= new List<float>(4); //accel brakes friction deaccel
+    List<float> intervals= new List<float>(4); //accel friction deaccel
 
-    Rigidbody2D carBody;
-
+    #region SPECS GET SET
     public float Speed { get => speed; set => speed = value; }
-
     public float InitalSpeed { get => initalSpeed; set => initalSpeed = value; }
     public float MaxSpeed { get => maxSpeed; set => maxSpeed = value; }
     public float Accel { get => accel; set => accel = value; }
+    public float BrakesPower { get => brakesPower; set => brakesPower = value; }
+    #endregion
+
+    #region BODY GET SET
     public WheelJoint2D BackWheel { get => backWheel; set => backWheel = value; }
     public WheelJoint2D FrontWheel { get => frontWheel; set => frontWheel = value; }
     public Rigidbody2D CarBody { get => carBody; set => carBody = value; }
     public List<float> Intervals { get => intervals; set => intervals = value; }
-    public float GasTank { get => gasTank; set => gasTank = value; }
-    public float BrakesPower { get => brakesPower; set => brakesPower = value; }
+    #endregion
 
-    public Car()
-    {
-    
-    }
+    #region GAS GET SET
+    public float GasTank { get => fuelTank; set => fuelTank = value; }
+    public float FuelConsume { get => fuelConsume; set => fuelConsume = value; }
+    public Slider FuelBar { get => fuelBar; set => fuelBar = value; }
+#endregion
     
 }
