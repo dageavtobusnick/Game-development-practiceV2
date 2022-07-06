@@ -19,6 +19,7 @@ public class carEngine : Car
     [SerializeField]
     Rigidbody2D frontWheelBody;
 
+   
     //boost
     void Awake()
     {
@@ -39,7 +40,7 @@ public class carEngine : Car
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CarBody.velocity);
+       // Debug.Log(CarBody.velocity);
         AccelAndDeaccel();
 
         if (frictionTime > 0 && !engineOn)
@@ -71,10 +72,15 @@ public class carEngine : Car
             backWheelBody.drag=15f;
             frontWheelBody.drag=15f;
         }
-        else
+        else if (CarBody.velocity.y<0.7f )
         {
-           backWheelBody.drag=4f;
-           frontWheelBody.drag=4f;
+           backWheelBody.drag=2f;
+           frontWheelBody.drag=2f;
+        }
+        else if (CarBody.velocity.y>1f)
+        {
+            backWheelBody.drag=0f;
+            frontWheelBody.drag=0f;
         }
 
     }
