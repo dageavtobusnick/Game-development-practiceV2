@@ -12,10 +12,12 @@ public class carEngine : Car
     private float frictionTime;
     private float deaccelTime;
     private float consumeTime;
-
-    private Vector3 stopLocation ;
     
-    bool stopped = false;
+
+    [SerializeField]
+    Rigidbody2D backWheelBody;
+    [SerializeField]
+    Rigidbody2D frontWheelBody;
 
     //boost
     void Awake()
@@ -31,6 +33,7 @@ public class carEngine : Car
     void Start()
     {
         InitalSpeed = Speed;
+       backWheelBody.drag=15f;
     }
 
     // Update is called once per frame
@@ -65,13 +68,13 @@ public class carEngine : Car
         }
         else if (brakesOn && CarBody.velocity.x<0.1f)
         {
-            stopLocation= this.transform.position;
-            CarBody.velocity=Vector2.zero;
-            CarBody.angularVelocity=0;
-            if (!stopped)
-            {
-                this.transform.position = stopLocation;
-            }
+            backWheelBody.drag=15f;
+            frontWheelBody.drag=15f;
+        }
+        else
+        {
+           backWheelBody.drag=4f;
+           frontWheelBody.drag=4f;
         }
 
     }
@@ -162,10 +165,5 @@ public class carEngine : Car
     public void BrakesTurnOn()
    {    
         brakesOn=!brakesOn;
-        stopped = false;
-        if(!brakesOn)
-        {
-            stopped=true;
-        }
    }
 }

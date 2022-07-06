@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 580944411}
   - component: {fileID: 580944414}
   m_Layer: 0
-  m_Name: Open Sprite Shape
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,6 +2405,8 @@ MonoBehaviour:
   backWheel: {fileID: 0}
   frontWheel: {fileID: 0}
   intervals: []
+  backWheelBody: {fileID: 0}
+  frontWheelBody: {fileID: 0}
 --- !u!212 &1045709040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3912,10 +3914,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 20
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ddc35af7e6a591e4fa6bd6ea232f1f84, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -4087,10 +4089,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 20
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ddc35af7e6a591e4fa6bd6ea232f1f84, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -4143,6 +4145,8 @@ MonoBehaviour:
   - 2
   - 2
   - 1
+  backWheelBody: {fileID: 4021801166374415184}
+  frontWheelBody: {fileID: 4022674258964296264}
 --- !u!50 &4024353613252695893
 Rigidbody2D:
   serializedVersion: 4
