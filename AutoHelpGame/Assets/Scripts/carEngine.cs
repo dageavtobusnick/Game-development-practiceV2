@@ -67,7 +67,7 @@ public class carEngine : Car
             CarBody.velocity = new Vector2(CarBody.velocity.x - 3f, CarBody.velocity.y-3f);
           
         }
-        else if (brakesOn && CarBody.velocity.x<0.1f)
+        else if (brakesOn && CarBody.velocity.x<0.1f && CarBody.velocity.y<0.7f)
         {
             backWheelBody.drag=15f;
             frontWheelBody.drag=15f;
