@@ -6,6 +6,9 @@ TagManager:
   tags:
   - FuelBar
   - DeathMenu
+  - CoinCounter
+  - ExtraAudio
+  - Collector
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - carbase
   - Ground
   - Roof
-  - 
+  - Collectables
   - 
   - 
   - 
