@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/StockScene.unity
+    guid: ea075c11af0bcbc488d6de854e9d0933
+  - enabled: 1
+    path: Assets/Scenes/Menu/MainMenu.unity
+    guid: 91171768936c7c640b73785af4dd49eb
+  - enabled: 1
+    path: Assets/Scenes/Menu/CarWashMenu.unity
+    guid: a4e665a2aa1b89b4fa50a829369d125e
+  - enabled: 1
+    path: Assets/Scenes/Menu/UpgradeMenu.unity
+    guid: 03ccd3d1709189348ba8ac52e11e7181
+  - enabled: 1
+    path: Assets/Scenes/Menu/SalesMenu.unity
+    guid: de25394836a0f6940a429bd673408ac7
+  - enabled: 1
+    path: Assets/Scenes/Menu/RepairMenu.unity
+    guid: 059c4c0ff7e5382429ee2d7f75db525d
   m_configObjects: {}
