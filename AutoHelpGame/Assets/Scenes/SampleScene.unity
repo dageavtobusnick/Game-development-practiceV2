@@ -2016,7 +2016,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.939394, y: 1}
+    m_SensorSize: {x: 2.1213872, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4502,7 +4502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -620, y: -407}
+  m_AnchoredPosition: {x: -473, y: -163}
   m_SizeDelta: {x: 104.4437, y: 145.3602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1473352123
@@ -5183,7 +5183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -679, y: 393}
+  m_AnchoredPosition: {x: -334, y: 182}
   m_SizeDelta: {x: 264.66266, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1813732435
@@ -5658,7 +5658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 763, y: 426}
+  m_AnchoredPosition: {x: 306, y: 182}
   m_SizeDelta: {x: 52.5466, y: 52.5466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113246864
