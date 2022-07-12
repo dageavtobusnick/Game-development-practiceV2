@@ -140,7 +140,9 @@ public class carEngine : Car
             }
             else
             {
-                FuelBar.value -= FuelConsume;
+                FuelTank-= FuelConsume*100;
+              
+               
                 consumeTime+=Intervals[3];
             }
         }
@@ -149,7 +151,12 @@ public class carEngine : Car
            BackWheel.useMotor=false;
            FrontWheel.useMotor=false;
         }
-       
+        if(FuelTank<=0)
+        {
+            GameObject.FindWithTag("DeathMenu").transform.GetChild (0).gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+         FuelBar.value = FuelTank/100;
     }
    public void EngineTurnOn(bool forward)
    {    
