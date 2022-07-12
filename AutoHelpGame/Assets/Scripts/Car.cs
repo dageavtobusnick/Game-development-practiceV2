@@ -60,7 +60,7 @@ public abstract class Car : MonoBehaviour
     #endregion
 
     #region GAS GET SET
-    public float GasTank { get => fuelTank; set => fuelTank = value; }
+    public float FuelTank { get => fuelTank; set => fuelTank = value; }
     public float FuelConsume { get => fuelConsume; set => fuelConsume = value; }
     public Slider FuelBar { get => fuelBar; set => fuelBar = value; }
 #endregion
