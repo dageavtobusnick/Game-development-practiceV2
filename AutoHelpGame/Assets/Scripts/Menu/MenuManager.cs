@@ -30,4 +30,8 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void LoadStockMenu()
+    {
+        SceneManager.LoadScene("StockScene");
+    }
 }
