@@ -28,10 +28,6 @@ public class MenuManager : MonoBehaviour
     }
 	public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
-    }
-    public void LoadStockMenu()
-    {
-        SceneManager.LoadScene("StockScene");
+        SceneManager.LoadScene("MeinMenu");
     }
 }
