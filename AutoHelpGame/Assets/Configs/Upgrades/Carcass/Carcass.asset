@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622932922290fe349a84141e9ac1b6a5, type: 3}
+  m_Name: Carcass
+  m_EditorClassIdentifier: 
+  _level: 0
+  _cost: 0
+  _hPBoost: 0
+  _next: {fileID: 11400000, guid: d10050fff3c11c14e93300cb9562cf88, type: 2}
+  _previous: {fileID: 0}

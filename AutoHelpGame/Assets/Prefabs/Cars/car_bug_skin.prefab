@@ -353,6 +353,7 @@ MonoBehaviour:
   accel: 50
   brakesPower: 50
   fuelTank: 100
+  carData: {fileID: 11400000, guid: 340e3757c8a1e984f828d4d6ee43d5a5, type: 2}
   fuelConsume: 0.01
   fuelBar: {fileID: 0}
   engineOn: 0
