@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285b13decd05fe143b0f3292526c1a95, type: 3}
+  m_Name: Car 2
+  m_EditorClassIdentifier: 
+  _id: 2
+  _maxSpeed: 2000
+  _accel: 50
+  _brakesPower: 150
+  _fuelTankMax: 100
+  _fuelConsume: 100
+  _carMaxHP: 100
+  _carcassUpdate: {fileID: 11400000, guid: ba7cb237fd4e73d4e9a2a842357cab6c, type: 2}
+  _engineUpgrade: {fileID: 11400000, guid: 7b55597d89969c24395131e5f6a01afd, type: 2}
+  _fuelTankUpdate: {fileID: 11400000, guid: 2639cd19e3dbc1f4ab8e6022bc978c26, type: 2}
+  _transmissionUpdate: {fileID: 11400000, guid: 0b3e113fa62543a4ca1cf6106222c72b, type: 2}
+  _wheelsUpdate: {fileID: 11400000, guid: 7f2a4b8f119dde943b1d633f6842b540, type: 2}
