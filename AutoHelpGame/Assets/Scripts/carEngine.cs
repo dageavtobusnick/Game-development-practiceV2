@@ -29,7 +29,8 @@ public class carEngine : Car
         consumeTime = Intervals[3];
         CarBody = this.GetComponent<Rigidbody2D>();
         FuelBar =  GameObject.FindWithTag("FuelBar").GetComponent<Slider>();
-        CarData = PlayerDataHub.instance.PlayerData.TotalCar;
+        if(PlayerDataHub.instance == null)
+            CarData = PlayerDataHub.instance.PlayerData.TotalCar;
     }
     // Start is called before the first frame update
     void Start()
