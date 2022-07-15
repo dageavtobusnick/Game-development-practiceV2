@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6a7d2de9e20c14bbd56a9b5076a40a, type: 3}
+  m_Name: FuelTank 3
+  m_EditorClassIdentifier: 
+  _level: 3
+  _cost: 0
+  _maxFuelBoost: 0.1
+  _next: {fileID: 11400000, guid: 555a89827747b65449c8f4c653b0579d, type: 2}
+  _previous: {fileID: 11400000, guid: 45661bfff46b95c45b4c2a6eddcf2cd8, type: 2}
