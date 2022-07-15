@@ -20,6 +20,8 @@ public abstract class Car : MonoBehaviour
 
     [SerializeField]
     private float fuelTank=100;
+    [SerializeField]
+    private CarData carData;
 
     [SerializeField]
     private float fuelConsume=100;
@@ -47,9 +49,9 @@ public abstract class Car : MonoBehaviour
     #region SPECS GET SET
     public float Speed { get => speed; set => speed = value; }
     public float InitalSpeed { get => initalSpeed; set => initalSpeed = value; }
-    public float MaxSpeed { get => maxSpeed; set => maxSpeed = value; }
-    public float Accel { get => accel; set => accel = value; }
-    public float BrakesPower { get => brakesPower; set => brakesPower = value; }
+    public float MaxSpeed { get => carData.MaxSpeed; }
+    public float Accel { get => carData.Accel;}
+    public float BrakesPower { get => carData.BrakesPower; }
     #endregion
 
     #region BODY GET SET
@@ -61,8 +63,10 @@ public abstract class Car : MonoBehaviour
 
     #region GAS GET SET
     public float FuelTank { get => fuelTank; set => fuelTank = value; }
-    public float FuelConsume { get => fuelConsume; set => fuelConsume = value; }
+    public float FuelMaxTank { get => carData.FuelTankMax; }
+    public float FuelConsume { get => carData.FuelConsume/(100*100); }
     public Slider FuelBar { get => fuelBar; set => fuelBar = value; }
-#endregion
-    
+    public CarData CarData { get => carData; protected set => carData = value; }
+    #endregion
+
 }
