@@ -9,6 +9,13 @@ public class FuelCollect : MonoBehaviour
 
     [SerializeField]
     float capacity = 0 ;
+
+    [SerializeField, Range(0.2f, 0.5f)] 
+    float floatingTime;
+
+    float cycleTime;
+
+    bool goingUp = true;
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player")
@@ -27,12 +34,28 @@ public class FuelCollect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cycleTime= floatingTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(cycleTime > 0 && goingUp)
+        {
+            cycleTime-=Time.deltaTime;
+            transform.Translate(new Vector3(0,0.1f,0) * Time.deltaTime, Space.World);
+        
+        }
+        else if (cycleTime > 0 && !goingUp)
+        {
+            cycleTime-=Time.deltaTime;
+             transform.Translate(new Vector3(0,-0.1f,0) * Time.deltaTime, Space.World);
+        }
+        else
+        {
+            cycleTime+=floatingTime;
+            goingUp = !goingUp;
+        }
         
     }
 }
