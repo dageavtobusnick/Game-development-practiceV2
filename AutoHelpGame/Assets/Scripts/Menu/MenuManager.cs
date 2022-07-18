@@ -34,4 +34,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("StockScene");
     }
+	
+	public void LoadMapSelection()
+    {
+        SceneManager.LoadScene("MapSelection");
+    }
 }

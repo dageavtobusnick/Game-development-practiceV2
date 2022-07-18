@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/RepairMenu.unity
     guid: 059c4c0ff7e5382429ee2d7f75db525d
+  - enabled: 1
+    path: Assets/Scenes/Menu/MapSelection.unity
+    guid: ba23156680b05c44188bc2d852959c29
   m_configObjects: {}
