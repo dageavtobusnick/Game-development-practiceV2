@@ -45,6 +45,7 @@ public class WheelSpin : MonoBehaviour
     public float genSpeed;
     public float subSpeed;
     private bool isSpinning = false;
+    public Text mytext;
 
     [SerializeField]
     Button spinButton;
@@ -142,6 +143,8 @@ public class WheelSpin : MonoBehaviour
                     Debug.Log(colliders[winnerDist].gameObject.name);
                     string rewardText = colliders[winnerDist].GetComponentInChildren<TextMeshProUGUI>().text;
                     Debug.Log(rewardText);
+                    mytext.gameObject.SetActive(true);
+                    mytext.text = "Вы получили" + " " + rewardText;
                 }
             
             }

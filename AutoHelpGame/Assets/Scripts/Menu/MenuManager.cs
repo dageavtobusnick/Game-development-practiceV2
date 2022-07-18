@@ -26,4 +26,12 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("RepairMenu");
     }
+	public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadStockMenu()
+    {
+        SceneManager.LoadScene("StockScene");
+    }
 }

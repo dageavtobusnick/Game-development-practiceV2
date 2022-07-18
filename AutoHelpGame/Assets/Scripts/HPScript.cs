@@ -8,11 +8,20 @@ public class HPScript : MonoBehaviour
     public event Action<int> HPUpdated;
     public event Action Died;
     [SerializeField]
-    private int MaxHP;
-    private int HP;
-    
+    private int _maxHP;
+    private int _hP;
+    private CarData _carData;
+    public int HP { get => _hP; private set=>_hP=value; }
+    public int MaxHP { get =>(_carData!=null)?(int)Mathf.Round(_carData.CarMaxHP):_maxHP; }
+
     void Start()
     {
+        var car = GetComponent<Car>();
+        if (car != null)
+        {
+            _carData = car.CarData;
+            HPUpdated += _carData.UpdateHP;
+        }
         HP = MaxHP;
     }
 
@@ -34,6 +43,10 @@ public class HPScript : MonoBehaviour
 
     public void Die()
     {
+        if (_carData!= null)
+        {
+            HPUpdated -= _carData.UpdateHP;
+        }
         Died?.Invoke();
         Destroy(gameObject);
     }
