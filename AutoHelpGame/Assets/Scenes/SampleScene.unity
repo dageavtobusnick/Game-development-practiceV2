@@ -6547,7 +6547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094174075696762246, guid: 10869321bed8a1849b7892fd7480088c, type: 3}
       propertyPath: speed
-      value: 1050
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 5094174075696762246, guid: 10869321bed8a1849b7892fd7480088c, type: 3}
       propertyPath: fuelBar

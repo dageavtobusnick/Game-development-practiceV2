@@ -45,7 +45,9 @@ public class WheelSpin : MonoBehaviour
     public float genSpeed;
     public float subSpeed;
     private bool isSpinning = false;
-    public Text mytext;
+    public TextMeshProUGUI mytext;
+    public static  int amountWheel = 1;
+    public TextMeshProUGUI AviableWheel;
 
     [SerializeField]
     Button spinButton;
@@ -96,6 +98,11 @@ public class WheelSpin : MonoBehaviour
             
             }
         }
+        if (PlayerPrefs.HasKey("AviableWheel"))
+        {
+
+            amountWheel = PlayerPrefs.GetInt("AviableWheel");
+        }
         
        
     }
@@ -103,41 +110,68 @@ public class WheelSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPrefs.HasKey("AviableWheel"))
+        {
 
-        if(isSpinning)
+            AviableWheel.text = "Доступно : " + PlayerPrefs.GetInt("AviableWheel"); ;
+        }
+        else
+        {
+            AviableWheel.text = "Доступно : " + 1;
+        }
+        if (isSpinning)
         {
             transform.Rotate(0,0,-genSpeed,Space.World);
             genSpeed-=subSpeed;
-        }
+          
 
-        if(genSpeed <= 0)
+        }
+       
+        /*if (amountWheel <= 0)
         {
-            genSpeed=0;
-            isSpinning=false;
-            spinButton.interactable=true;
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(pinTip.transform.position, 10f, rewardsLayer);
-            if(colliders[0] && getReward && !finishedReward)
+            spinButton.interactable = false;
+        }*/
+
+        if (genSpeed <= 0 )
+        {
+            
+            genSpeed = 0;
+            isSpinning = false;
+            if (amountWheel <= 0)
             {
+                spinButton.interactable = false;
+            }
+            else{
+                spinButton.interactable = true;
+            }
+            
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(pinTip.transform.position, 10f, rewardsLayer);
+            if (colliders[0] && getReward && !finishedReward)
+            {
+                
                 //Debug.Log(colliders[0].gameObject.name);
                 //Debug.Log(pinTip.transform.position.x - colliders[0].transform.position.x);
                 float tempDist = float.MaxValue;
                 int winnerDist = 0;
-                for(int i = 0 ; i <colliders.Length;i++)
+                for (int i = 0; i < colliders.Length; i++)
                 {
-                    if( Mathf.Abs(pinTip.transform.position.x-colliders[i].transform.position.x)<tempDist )
+                    if (Mathf.Abs(pinTip.transform.position.x - colliders[i].transform.position.x) < tempDist)
                     {
-                        tempDist= Mathf.Abs(pinTip.transform.position.x-colliders[i].transform.position.x);
-                        winnerDist=i;
+                        tempDist = Mathf.Abs(pinTip.transform.position.x - colliders[i].transform.position.x);
+                        winnerDist = i;
                     }
-                   
+
                 }
-    
-                if(pinTip.transform.position.x - colliders[winnerDist].transform.position.x>20f && !isSpinning)
+
+                if (pinTip.transform.position.x - colliders[winnerDist].transform.position.x > 20f && !isSpinning)
                 {
-                    transform.Rotate(0,0,-0.5f,Space.World);
+                    transform.Rotate(0, 0, -0.5f, Space.World);
+                   
                 }
                 else
                 {
+                  
+
                     finishedReward = true;
                     getReward = false;
                     Debug.Log(colliders[winnerDist].gameObject.name);
@@ -145,22 +179,30 @@ public class WheelSpin : MonoBehaviour
                     Debug.Log(rewardText);
                     mytext.gameObject.SetActive(true);
                     mytext.text = "Вы получили" + " " + rewardText;
+                  
                 }
-            
+
             }
 
         }
-        
+       
+
 
     }
 
     public void SpinMyWheel()
     {
+       
+        
         genSpeed = Random.Range(2.0f,5.0f);
         subSpeed = Random.Range(subSpeedMin,subSpeedMax);
         isSpinning=true;
         spinButton.interactable=false;
         getReward=true;
         finishedReward = false;
+        amountWheel--;
+        PlayerPrefs.SetInt("AviableWheel", amountWheel);
+
+
     }
 }

@@ -7,24 +7,56 @@ using TMPro;
 
 public class UpgradeMechanics : MonoBehaviour
 {
-	
+
 	public TextMeshProUGUI UpgradeEngineText;
 	public GameObject ButtonUpgradeEngine;
-	private int Enginelevel=1;
+	public static int Enginelevel=1;
 	
-    public void UpgradeEngine()
-    {
-		if (Enginelevel<=4){
-			Enginelevel++;
-			UpgradeEngineText.text = "Уровень: " + Enginelevel;
+
+
+	public void Start()
+	{
+
+		//PlayerPrefs.DeleteAll();
+		if (PlayerPrefs.HasKey("UpgradeEngine"))
+        {
 			
+			Enginelevel= PlayerPrefs.GetInt("UpgradeEngine");
+		}
+		
+		Debug.Log(Enginelevel);
+		Debug.Log(PlayerPrefs.GetInt("UpgradeEngine"));
+
+		
+	}
+	public void Update()
+    {
+		
+		if (Enginelevel <= 4)
+		{
+			if (PlayerPrefs.HasKey("UpgradeEngine"))
+			{
+
+				UpgradeEngineText.text = "Уровень: " + PlayerPrefs.GetInt("UpgradeEngine");
+			}
+			else
+            {
+				UpgradeEngineText.text = "Уровень: " + 1;
+			}
+		
 		}
 		else
 		{
 			ButtonUpgradeEngine.GetComponent<Button>().interactable = false;
 			UpgradeEngineText.text = "Максимум";
 		}
-    }
+	}
+	public void UpgradeEngine()
+    {
+		Enginelevel++;
+		PlayerPrefs.SetInt("UpgradeEngine", Enginelevel);
+		
+	}
 	
 	public TextMeshProUGUI UpgradeTransmissionText;
 	public GameObject ButtonUpgradeTransmission;

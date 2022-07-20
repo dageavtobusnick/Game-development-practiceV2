@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1319756277688970955, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 1324086837020745250, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -431,6 +435,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1324086838498667572, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: mytext
+      value: 
+      objectReference: {fileID: 1339706441}
     - target: {fileID: 1324086838580218598, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -482,6 +490,26 @@ PrefabInstance:
     - target: {fileID: 1345740037369468902, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543663954134281182, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: m_text
+      value: "\u0412\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543663954134281182, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543663954134281182, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543663954134281182, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382310445413428771, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8666492548738070745, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2202,6 +2230,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156956861}
   m_CullTransparentMesh: 1
+--- !u!114 &1339706441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5543663954134281182, guid: 859760cecfffc74459402e702fbfb1cd, type: 3}
+  m_PrefabInstance: {fileID: 72550538}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1382978547
 GameObject:
   m_ObjectHideFlags: 0
