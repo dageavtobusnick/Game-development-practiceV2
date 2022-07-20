@@ -22,7 +22,7 @@ public class CoinCollect : MonoBehaviour
                 GameObject.FindGameObjectWithTag("ExtraAudio").GetComponent<AudioSource>().PlayOneShot(myClip);
             }
            // CoinCollected -= PlayerDataHub.instance.PlayerData.AddCoins;
-            Destroy(gameObject,0.3f);         
+            Destroy(gameObject,0.25f);         
         }
      
     }
