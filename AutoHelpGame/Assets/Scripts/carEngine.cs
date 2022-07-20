@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,11 @@ public class carEngine : Car
     private float frictionTime;
     private float deaccelTime;
     private float consumeTime;
-    
+
+    public event Action SpeedLimitViolated;
+
+    public int SpeedLimit;
+
 
     [SerializeField]
     Rigidbody2D backWheelBody;
@@ -83,6 +88,10 @@ public class carEngine : Car
         {
             backWheelBody.drag=0f;
             frontWheelBody.drag=0f;
+        }
+        if (Speed > SpeedLimit&&SpeedLimitViolated!=null)
+        {
+            SpeedLimitViolated.Invoke();
         }
 
     }

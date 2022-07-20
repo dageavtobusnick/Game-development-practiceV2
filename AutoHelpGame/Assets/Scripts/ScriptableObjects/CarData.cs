@@ -57,7 +57,7 @@ public class CarData : ScriptableObject
     {
         if (_clearData == null)
         {
-            _clearData = PlayerDataHub.instance.carLoadList.CopyCarData(Id);
+            _clearData = PlayerDataHub.instance.CarLoadList.CopyCarData(Id);
         }
     }
 
