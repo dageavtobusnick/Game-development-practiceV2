@@ -25,6 +25,7 @@ public class PlayerDataHub : MonoBehaviour
         foreach(var counter in FindObjectsOfType<CoinCounter>())
         {
             PlayerData.CoinsCountChanged += counter.UpdageCoinsInfo;
+            counter.LockDestroy();
         }
     }
 }
