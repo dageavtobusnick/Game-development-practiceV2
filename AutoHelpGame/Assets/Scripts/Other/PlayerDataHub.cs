@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDataHub : MonoBehaviour
 {
     public static PlayerDataHub instance;
-    public CarLoadList carLoadList;
+    public CarLoadList CarLoadList;
     public PlayerData PlayerData;
     void Awake()
     {
@@ -18,8 +18,15 @@ public class PlayerDataHub : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        carLoadList = Instantiate(carLoadList);
-        carLoadList.Reload();
+        CarLoadList = Instantiate(CarLoadList);
+        CarLoadList.ReloadData();
+        PlayerData = Instantiate(PlayerData);
+        PlayerData.ReloadCarData();
+        foreach(var counter in FindObjectsOfType<CoinCounter>())
+        {
+            PlayerData.CoinsCountChanged += counter.UpdageCoinsInfo;
+            counter.LockDestroy();
+        }
     }
 }
 

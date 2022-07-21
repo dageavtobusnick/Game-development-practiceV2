@@ -19,8 +19,8 @@ MonoBehaviour:
   _fuelTankMax: 100
   _fuelConsume: 100
   _carMaxHP: 100
-  _carcassUpdate: {fileID: 11400000, guid: ba7cb237fd4e73d4e9a2a842357cab6c, type: 2}
+  _carcassUpgrade: {fileID: 11400000, guid: ba7cb237fd4e73d4e9a2a842357cab6c, type: 2}
   _engineUpgrade: {fileID: 11400000, guid: 7b55597d89969c24395131e5f6a01afd, type: 2}
-  _fuelTankUpdate: {fileID: 11400000, guid: 2639cd19e3dbc1f4ab8e6022bc978c26, type: 2}
-  _transmissionUpdate: {fileID: 11400000, guid: 0b3e113fa62543a4ca1cf6106222c72b, type: 2}
-  _wheelsUpdate: {fileID: 11400000, guid: 7f2a4b8f119dde943b1d633f6842b540, type: 2}
+  _fuelTankUpgrade: {fileID: 11400000, guid: 2639cd19e3dbc1f4ab8e6022bc978c26, type: 2}
+  _transmissionUpgrade: {fileID: 11400000, guid: 0b3e113fa62543a4ca1cf6106222c72b, type: 2}
+  _wheelsUpgrade: {fileID: 11400000, guid: 7f2a4b8f119dde943b1d633f6842b540, type: 2}

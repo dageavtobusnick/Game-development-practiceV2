@@ -8,23 +8,12 @@ public abstract class Car : MonoBehaviour
     #region Specs
     [SerializeField]
     private float speed;
-
     [SerializeField]
     private float initalSpeed = 300;
-    [SerializeField]
-    private float maxSpeed= 2000;
-    [SerializeField]
-    private float accel= 50;
-    [SerializeField]
-    private float brakesPower= 150;
-
     [SerializeField]
     private float fuelTank=100;
     [SerializeField]
     private CarData carData;
-
-    [SerializeField]
-    private float fuelConsume=100;
 #endregion
     
     [SerializeField]

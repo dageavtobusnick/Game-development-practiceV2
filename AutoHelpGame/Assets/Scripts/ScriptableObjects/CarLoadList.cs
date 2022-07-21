@@ -9,7 +9,7 @@ public class CarLoadList:ScriptableObject
     [SerializeField]
     private List<CarData> _cars;
 
-    public void Reload()
+    public void ReloadData()
     {
         _cars = _cars.Select(car => Instantiate(car)).ToList();
     }

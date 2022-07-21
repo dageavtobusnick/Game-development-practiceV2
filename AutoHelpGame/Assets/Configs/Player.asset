@@ -15,4 +15,7 @@ MonoBehaviour:
   _coinsCount: 0
   _lootBoxCount: 0
   _cars:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 340e3757c8a1e984f828d4d6ee43d5a5, type: 2}
+  - {fileID: 11400000, guid: 52f114fcbad9f694b96daafb12a08311, type: 2}
+  - {fileID: 11400000, guid: b449e0e8c1f90654bb5ab9282aad66fe, type: 2}
+  _totalCar: {fileID: 11400000, guid: 340e3757c8a1e984f828d4d6ee43d5a5, type: 2}
