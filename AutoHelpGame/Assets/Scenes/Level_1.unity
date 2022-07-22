@@ -1921,6 +1921,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62048537642538105, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000120731989759891, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000120731989759891, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1860
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000120731989759891, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265265189835229890, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1265265190057039591, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2025,8 +2045,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1265265190938631990, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1265265191087393812, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265265191087393815, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265265191168575411, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265265191377197059, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1265265191790722617, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
@@ -2037,9 +2073,41 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1646311089713238112, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1429
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646311089713238112, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758690019319879295, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_TagString
+      value: CoinCounter
+      objectReference: {fileID: 0}
     - target: {fileID: 2810317777191945635, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161072046750836546, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479821054907613327, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479821054907613327, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796599547210407895, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116214949577810331, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7308583616948791741, guid: 46adb9ca2f3322745b14a4ecdbf023b7, type: 3}
       propertyPath: m_LocalScale.x

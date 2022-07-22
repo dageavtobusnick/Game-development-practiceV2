@@ -9,6 +9,7 @@ TagManager:
   - CoinCounter
   - ExtraAudio
   - Collector
+  - EndLevelCoins
   layers:
   - Default
   - TransparentFX

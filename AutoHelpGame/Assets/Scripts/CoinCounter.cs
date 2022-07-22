@@ -6,7 +6,7 @@ using TMPro;
 public class CoinCounter : MonoBehaviour
 {
     // Start is called before the first frame update
-    private TextMeshProUGUI _textMeshProUGUI;
+    private  TextMeshProUGUI _textMeshProUGUI;
     private bool _isReadyToDestroy=true;
     void Start()
     {
