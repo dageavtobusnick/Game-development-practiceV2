@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3418389804ead468d42327bdf0fe45, type: 3}
-  m_Name: BonusLoadList
+  m_Script: {fileID: 11500000, guid: f787072d5f6d52a4e884c7ae0be75156, type: 3}
+  m_Name: MoneyBonus
   m_EditorClassIdentifier: 
-  _bonuses:
-  - {fileID: 11400000, guid: 676d084b1a809654cb93def88bfd8856, type: 2}
+  _id: 1
+  _uniqueId: 0
+  _bonusValue: 10

@@ -35,7 +35,7 @@ public class PlayerData : ScriptableObject
     private List<CarData> _cars;
     [SerializeField]
     [HideInInspector]
-    private HashSet<Bonus> _bonuses;
+    private HashSet<Bonus> _bonuses=new HashSet<Bonus>();
     [SerializeField]
     private CarData _totalCar;
 
@@ -58,7 +58,12 @@ public class PlayerData : ScriptableObject
     }
     public void AddBonus(int Id)
     {
-
+        var bonus=PlayerDataHub.instance.BonusLoadList.CopyBonusData(Id);
+        while (_bonuses.Contains(bonus))
+        {
+            bonus.RegenUniqueID();
+        }
+        _bonuses.Add(bonus);
     }
     public void SelectCar(int index)
     {
