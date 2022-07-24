@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,28 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Car",menuName ="Configs/Cars")]
 public class CarData : ScriptableObject
 {
+    [Serializable]
+    public readonly struct CarSaveData
+    {
+        public readonly int Id;
+        public readonly int HP;
+        public readonly int CarcassLevel;
+        public readonly int EngineLevel;
+        public readonly int FuelTankLevel;
+        public readonly int Transmissionlevel;
+        public readonly int WheelsLevel;
+
+        public CarSaveData(int id, int hP, int carcassLevel, int engineLevel, int fuelTankLevel, int transmissionlevel, int wheelsLevel)
+        {
+            Id = id;
+            HP = hP;
+            CarcassLevel = carcassLevel;
+            EngineLevel = engineLevel;
+            FuelTankLevel = fuelTankLevel;
+            Transmissionlevel = transmissionlevel;
+            WheelsLevel = wheelsLevel;
+        }
+    }
     [SerializeField]
     private static List<CarData> carDataList; 
     [SerializeField]
@@ -44,11 +67,11 @@ public class CarData : ScriptableObject
     public float CarMaxHP { get => _carMaxHP; }
     public int CarHP { get => _carHP; }
     public float FuelTankMax { get => _fuelTankMax; }
-    public CarcassUpgrade CarcassUpdate { get => _carcassUpgrade; }
-    public EngineUpgrade EngineUpdate { get => _engineUpgrade; }
-    public FuelTankUpgrade FuelTankUpdate { get => _fuelTankUpgrade; }
-    public TransmissionUpgrade TransmissionUpdate { get => _transmissionUpgrade; }
-    public WheelsUpgrade WheelsUpdate { get => _wheelsUpgrade; }
+    public CarcassUpgrade CarcassUpgrade { get => _carcassUpgrade; }
+    public EngineUpgrade EngineUpgrade { get => _engineUpgrade; }
+    public FuelTankUpgrade FuelTankUpgrade { get => _fuelTankUpgrade; }
+    public TransmissionUpgrade TransmissionUpgrade { get => _transmissionUpgrade; }
+    public WheelsUpgrade WheelsUpgrade { get => _wheelsUpgrade; }
     public int Id { get => _id; }
     #endregion
 
@@ -61,7 +84,7 @@ public class CarData : ScriptableObject
         }
     }
 
-    public int UpdateCarcass()
+    public int UpgradeCarcass()
     {
         CheckClearData();
         _carcassUpgrade = _carcassUpgrade.Next;
@@ -100,9 +123,34 @@ public class CarData : ScriptableObject
     public void UpdateHP(int hp)
     {
         _carHP = hp;
+        PlayerDataHub.instance.Save();
+    }
+    public void Repair()
+    {
+        _carHP = (int)Mathf.Round(CarMaxHP);
+        PlayerDataHub.instance.Save();
     }
     private static int CountValue(float value,float boost)
     {
         return (int)Mathf.Round(value * (1 +boost));
+    }
+    public CarSaveData SaveData()
+    {
+        return new CarSaveData(Id, CarHP, CarcassUpgrade.Level, EngineUpgrade.Level, FuelTankUpgrade.Level, TransmissionUpgrade.Level, WheelsUpgrade.Level);
+    }
+    public CarData LoadData(CarSaveData saveData)
+    {
+        _carHP = saveData.HP;
+        while (CarcassUpgrade.Level < saveData.CarcassLevel)
+            UpgradeCarcass(); 
+        while (EngineUpgrade.Level < saveData.EngineLevel)
+            UpgradeEngine(); 
+        while (FuelTankUpgrade.Level < saveData.FuelTankLevel)
+            UpgradeFuelTank(); 
+        while (TransmissionUpgrade.Level < saveData.Transmissionlevel)
+            UpgradeCarcass();
+        while (WheelsUpgrade.Level < saveData.WheelsLevel)
+            UpgradeWheels();
+        return this;
     }
 }
