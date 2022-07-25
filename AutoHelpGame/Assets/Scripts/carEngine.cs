@@ -43,6 +43,7 @@ public class carEngine : Car
         backWheelBody.drag=15f;
         if (PlayerDataHub.instance != null)
             CarData = PlayerDataHub.instance.PlayerData.TotalCar;
+        FuelBar.maxValue = FuelMaxTank;
     }
 
     // Update is called once per frame
@@ -168,7 +169,7 @@ public class carEngine : Car
             GameObject.FindWithTag("DeathMenu").transform.GetChild (0).gameObject.SetActive(true);
             Time.timeScale = 0f;
         }
-         FuelBar.value = FuelTank/FuelMaxTank;
+         FuelBar.value = FuelTank;
     }
    public void EngineTurnOn(bool forward)
    {    

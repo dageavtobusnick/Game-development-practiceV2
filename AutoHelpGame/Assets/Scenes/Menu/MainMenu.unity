@@ -1029,7 +1029,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819346575309495871, guid: c81d91f5caacecd4a8c4eeee5958e786, type: 3}
       propertyPath: _loadOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3562476976820164523, guid: c81d91f5caacecd4a8c4eeee5958e786, type: 3}
       propertyPath: m_RootOrder

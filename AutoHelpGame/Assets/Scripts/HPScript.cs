@@ -22,8 +22,17 @@ public class HPScript : MonoBehaviour
             _carData = car.CarData;
             HPUpdated += _carData.UpdateHP;
             _maxHP = (int)Mathf.Round(car.CarData.CarMaxHP);
+            HP = _carData.CarHP;
+            var bar = FindObjectOfType<HpBarScript>();
+            bar.Init(MaxHP);
+            bar.UpdateInfo(HP);
+            HPUpdated += bar.UpdateInfo;
         }
-        HP = MaxHP;
+        else
+        {
+            HP = MaxHP;
+        }
+        
     }
 
     public void Heal(int HPCount)
