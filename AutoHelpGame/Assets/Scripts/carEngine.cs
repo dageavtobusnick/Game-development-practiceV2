@@ -188,6 +188,10 @@ public class carEngine : Car
         }
 
    }
+    public void RefilTank(int count)
+    {
+        FuelTank = (FuelTank + count > FuelMaxTank) ? FuelMaxTank : FuelTank + count;
+    }
     public void BrakesTurnOn()
    {    
         brakesOn=!brakesOn;
