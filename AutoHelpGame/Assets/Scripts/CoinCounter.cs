@@ -8,11 +8,19 @@ public class CoinCounter : MonoBehaviour
     // Start is called before the first frame update
     private  TextMeshProUGUI _textMeshProUGUI;
     private bool _isReadyToDestroy=true;
+    private int _localCoins;
+
+    public int LocalCoins { get => _localCoins; }
+
     void Start()
     {
-        PlayerPrefs.SetInt("levelCoins",0);
         _textMeshProUGUI= GetComponent<TextMeshProUGUI>();
-        _textMeshProUGUI.text = PlayerPrefs.GetInt("levelCoins").ToString();
+        if (PlayerDataHub.instance != null)
+        {
+            PlayerDataHub.instance.PlayerData.CoinsCountChanged += UpdageCoinsInfo;
+            LockDestroy();
+            _textMeshProUGUI.text = PlayerDataHub.instance.PlayerData.CoinsCount.ToString();
+        }
         //when lvl ends add all of them to coins
     }
 
@@ -20,6 +28,10 @@ public class CoinCounter : MonoBehaviour
     {
         Debug.Log("COPY");
         _textMeshProUGUI.text=PlayerPrefs.GetInt("levelCoins").ToString();
+    }
+    public void CollectLocalCoins(int count)
+    {
+        _localCoins += count;
     }
     public void UpdageCoinsInfo(int coinsCount)
     {

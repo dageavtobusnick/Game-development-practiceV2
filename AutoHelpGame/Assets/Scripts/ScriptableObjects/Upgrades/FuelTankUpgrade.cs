@@ -14,6 +14,8 @@ public class FuelTankUpgrade : BaseUpgrade
     public float MaxFuelBoost { get => _maxFuelBoost; }
     public FuelTankUpgrade Next { get => _next; }
     public FuelTankUpgrade Previous { get => _previous; }
+    public override bool IsUpgradeable => _next != null;
+    public override int NextCost => (int)_next?.Cost;
 
     public float CountSummaryBoost()
     {

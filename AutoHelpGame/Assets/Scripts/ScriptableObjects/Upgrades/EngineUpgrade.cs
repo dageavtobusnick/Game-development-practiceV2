@@ -18,6 +18,8 @@ public class EngineUpgrade : BaseUpgrade
     public float AccelBoost { get => _accelBoost; }
     public EngineUpgrade Next { get => _next; }
     public EngineUpgrade Previous { get => _previous; }
+    public override bool IsUpgradeable => _next != null;
+    public override int NextCost => (int)_next?.Cost;
     public float CountSummaryConsumeBoost()
     {
         float boost = 0;

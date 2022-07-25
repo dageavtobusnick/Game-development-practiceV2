@@ -349,12 +349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   initalSpeed: 300
-  maxSpeed: 2000
-  accel: 50
-  brakesPower: 50
   fuelTank: 100
   carData: {fileID: 11400000, guid: 340e3757c8a1e984f828d4d6ee43d5a5, type: 2}
-  fuelConsume: 0.01
   fuelBar: {fileID: 0}
   engineOn: 0
   brakesOn: 0
@@ -365,6 +361,7 @@ MonoBehaviour:
   - 2
   - 2
   - 1
+  SpeedLimit: 0
   backWheelBody: {fileID: 5096679243642564994}
   frontWheelBody: {fileID: 5095872396552366234}
 --- !u!60 &5094174075696762244
@@ -600,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933c0d83e16366643899fc2e015bdfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
+  _maxHP: 0
 --- !u!1 &5096679243642565023
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50536288ebebc44bacfc2e7da07016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 0
+  _carHP: {fileID: 3295920776358744601}
 --- !u!68 &8172700848728211340
 EdgeCollider2D:
   m_ObjectHideFlags: 0

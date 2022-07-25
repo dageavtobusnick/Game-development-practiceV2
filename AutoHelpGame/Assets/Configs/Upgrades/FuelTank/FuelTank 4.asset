@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FuelTank 4
   m_EditorClassIdentifier: 
   _level: 4
-  _cost: 0
+  _cost: 1
   _maxFuelBoost: 0.1
   _next: {fileID: 11400000, guid: 8a527a2acf5aa104da08072c03f87502, type: 2}
   _previous: {fileID: 11400000, guid: bf4c1fbc43d525f488292c0926e1174b, type: 2}

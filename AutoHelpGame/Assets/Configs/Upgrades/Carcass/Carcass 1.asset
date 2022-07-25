@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carcass 1
   m_EditorClassIdentifier: 
   _level: 1
-  _cost: 0
+  _cost: 1
   _hPBoost: 0.2
   _next: {fileID: 11400000, guid: a8803df0027f7e34999e9adf918c1bb7, type: 2}
   _previous: {fileID: 11400000, guid: ba7cb237fd4e73d4e9a2a842357cab6c, type: 2}

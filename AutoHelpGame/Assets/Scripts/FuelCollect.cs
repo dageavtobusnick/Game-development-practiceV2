@@ -15,7 +15,7 @@ public class FuelCollect : MonoBehaviour
         {
             Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
             Debug.Log("add fuel");
-            col.GetComponent<carEngine>().FuelTank+= capacity;
+            col.GetComponent<carEngine>().RefilTank((int)Mathf.Round( capacity));
             if(myClip)
             {
                 GameObject.FindGameObjectWithTag("ExtraAudio").GetComponent<AudioSource>().PlayOneShot(myClip);

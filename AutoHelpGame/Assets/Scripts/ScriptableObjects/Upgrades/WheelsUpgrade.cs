@@ -15,6 +15,8 @@ public class WheelsUpgrade : BaseUpgrade
     public float AdhesionBoost { get => _adhesionBoost; }
     public WheelsUpgrade Next { get => _next; }
     public WheelsUpgrade Previous { get => _previous; }
+    public override bool IsUpgradeable => _next != null;
+    public override int NextCost => (int)_next?.Cost;
     public float CountSummaryBoost()
     {
         float boost = 0;

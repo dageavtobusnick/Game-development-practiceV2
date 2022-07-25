@@ -20,104 +20,49 @@ public class UpgradeMechanics : MonoBehaviour
        //PlayerPrefs.DeleteAll();
         Debug.Log(Enginelevel);
         Debug.Log(PlayerPrefs.GetInt("UpgradeEngine"));
+        FullInfoUpdate();
     }
-    public void Update()
+
+    private void FullInfoUpdate()
     {
         var playerData = PlayerDataHub.instance.PlayerData;
-        if (playerData.TotalCar.EngineUpgrade.Next!=null)
+        var car = playerData.TotalCar;
+        UpdateInfo(car.EngineUpgrade,ButtonUpgradeEngine, UpgradeEngineText);
+        UpdateInfo(car.TransmissionUpgrade, ButtonUpgradeTransmission, UpgradeTransmissionText);
+        UpdateInfo(car.WheelsUpgrade, ButtonUpgradeWheels, UpgradeWheelsText);
+        UpdateInfo(car.FuelTankUpgrade, ButtonUpgradeTankFuel, UpgradeTankFuelText);
+        UpdateInfo(car.CarcassUpgrade, ButtonUpgradeBody, UpgradeBodyText);
+    }
+
+    private void UpdateInfo(BaseUpgrade upgrade, Button button,TextMeshProUGUI text)
+    {
+        var playerData = PlayerDataHub.instance.PlayerData;
+        if (upgrade.IsUpgradeable)
         {
-            if(playerData.TotalCar.EngineUpgrade.Cost <= playerData.CoinsCount)
+            if (upgrade.NextCost<= playerData.CoinsCount)
             {
-                ButtonUpgradeEngine.interactable = true;
-                UpgradeEngineText.text = $"Уровень: {playerData.TotalCar.EngineUpgrade.Level}";
+                button.interactable = true;
+                text.text = $"Уровень: {upgrade.Level}";
             }
             else
             {
-                ButtonUpgradeEngine.interactable = false;
-                UpgradeEngineText.text = "Дорого";
+                button.interactable = false;
+                text.text = "Дорого";
             }
         }
-        else 
+        else
         {
-            ButtonUpgradeEngine.interactable = false;
-            UpgradeEngineText.text = "Максимум";
-        }
-        if (playerData.TotalCar.TransmissionUpgrade.Next!=null)
-        {
-            if(playerData.TotalCar.TransmissionUpgrade.Cost <= playerData.CoinsCount)
-            {
-                ButtonUpgradeTransmission.interactable = true;
-                UpgradeTransmissionText.text = $"Уровень: {playerData.TotalCar.TransmissionUpgrade.Level}";
-            }
-            else
-            {
-                ButtonUpgradeTransmission.interactable = false;
-                UpgradeTransmissionText.text = "Дорого";
-            }
-        }
-        else 
-        {
-            ButtonUpgradeTransmission.interactable = false;
-            UpgradeTransmissionText.text = "Максимум";
-        }
-        if (playerData.TotalCar.WheelsUpgrade.Next!=null)
-        {
-            if(playerData.TotalCar.WheelsUpgrade.Cost <= playerData.CoinsCount)
-            {
-                ButtonUpgradeWheels.interactable = true;
-                UpgradeWheelsText.text = $"Уровень: {playerData.TotalCar.WheelsUpgrade.Level}";
-            }
-            else
-            {
-                ButtonUpgradeWheels.interactable = false;
-                UpgradeWheelsText.text = "Дорого";
-            }
-        }
-        else 
-        {
-            ButtonUpgradeWheels.interactable = false;
-            UpgradeWheelsText.text = "Максимум";
-        }
-        if (playerData.TotalCar.CarcassUpgrade.Next!=null)
-        {
-            if(playerData.TotalCar.CarcassUpgrade.Cost <= playerData.CoinsCount)
-            {
-                ButtonUpgradeBody.interactable = true;
-                UpgradeBodyText.text = $"Уровень: {playerData.TotalCar.CarcassUpgrade.Level}";
-            }
-            else
-            {
-               ButtonUpgradeBody.interactable = false;
-                UpgradeBodyText.text = "Дорого";
-            }
-        }
-        else 
-        {
-            ButtonUpgradeBody.interactable = false;
-            UpgradeBodyText.text = "Максимум";
-        }
-        if (playerData.TotalCar.FuelTankUpgrade.Next!=null)
-        {
-            if(playerData.TotalCar.FuelTankUpgrade.Cost <= playerData.CoinsCount)
-            {
-                ButtonUpgradeTankFuel.interactable = true;
-                UpgradeTankFuelText.text = $"Уровень: {playerData.TotalCar.FuelTankUpgrade.Level}";
-            }
-            else
-            {
-                ButtonUpgradeTankFuel.interactable = false;
-                UpgradeTankFuelText.text = "Дорого";
-            }
-        }
-        else 
-        {
-            ButtonUpgradeTankFuel.interactable = false;
-            UpgradeTankFuelText.text = "Максимум";
+            button.interactable = false;
+            text.text = "Максимум";
         }
     }
+
     public void UpgradeEngine()
     {
+        var playerData = PlayerDataHub.instance.PlayerData;
+        var car = playerData.TotalCar;
         PlayerDataHub.instance.PlayerData.Upgrade(UpgradeType.Engine);
+        FullInfoUpdate();
     }
 
     public TextMeshProUGUI UpgradeTransmissionText;
@@ -125,7 +70,10 @@ public class UpgradeMechanics : MonoBehaviour
 
     public void UpgradeTransmission()
     {
+        var playerData = PlayerDataHub.instance.PlayerData;
+        var car = playerData.TotalCar;
         PlayerDataHub.instance.PlayerData.Upgrade(UpgradeType.Transmission);
+        FullInfoUpdate();
     }
 
     public TextMeshProUGUI UpgradeWheelsText;
@@ -133,8 +81,10 @@ public class UpgradeMechanics : MonoBehaviour
 
     public void UpgradeWheels()
     {
-
+        var playerData = PlayerDataHub.instance.PlayerData;
+        var car = playerData.TotalCar;
         PlayerDataHub.instance.PlayerData.Upgrade(UpgradeType.Wheels);
+        FullInfoUpdate();
     }
 
     public TextMeshProUGUI UpgradeBodyText;
@@ -142,7 +92,10 @@ public class UpgradeMechanics : MonoBehaviour
 
     public void UpgradeBody()
     {
+        var playerData = PlayerDataHub.instance.PlayerData;
+        var car = playerData.TotalCar;
         PlayerDataHub.instance.PlayerData.Upgrade(UpgradeType.HP);
+        FullInfoUpdate();
     }
 
     public TextMeshProUGUI UpgradeTankFuelText;
@@ -150,6 +103,9 @@ public class UpgradeMechanics : MonoBehaviour
 
     public void UpgradeTankFuel()
     {
+        var playerData = PlayerDataHub.instance.PlayerData;
+        var car = playerData.TotalCar;
         PlayerDataHub.instance.PlayerData.Upgrade(UpgradeType.FuelTank);
+        FullInfoUpdate();
     }
 }

@@ -34,14 +34,16 @@ public class carEngine : Car
         consumeTime = Intervals[3];
         CarBody = this.GetComponent<Rigidbody2D>();
         FuelBar =  GameObject.FindWithTag("FuelBar").GetComponent<Slider>();
-        /*if(PlayerDataHub.instance == null)
-            CarData = PlayerDataHub.instance.PlayerData.TotalCar;*/
+        
     }
     // Start is called before the first frame update
     void Start()
     {
         InitalSpeed = Speed;
-       backWheelBody.drag=15f;
+        backWheelBody.drag=15f;
+        if (PlayerDataHub.instance != null)
+            CarData = PlayerDataHub.instance.PlayerData.TotalCar;
+        FuelBar.maxValue = FuelMaxTank;
     }
 
     // Update is called once per frame
@@ -167,7 +169,7 @@ public class carEngine : Car
             GameObject.FindWithTag("DeathMenu").transform.GetChild (0).gameObject.SetActive(true);
             Time.timeScale = 0f;
         }
-         FuelBar.value = FuelTank/FuelMaxTank;
+         FuelBar.value = FuelTank;
     }
    public void EngineTurnOn(bool forward)
    {    
@@ -186,6 +188,10 @@ public class carEngine : Car
         }
 
    }
+    public void RefilTank(int count)
+    {
+        FuelTank = (FuelTank + count > FuelMaxTank) ? FuelMaxTank : FuelTank + count;
+    }
     public void BrakesTurnOn()
    {    
         brakesOn=!brakesOn;

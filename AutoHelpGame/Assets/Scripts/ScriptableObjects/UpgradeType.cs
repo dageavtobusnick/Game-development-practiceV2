@@ -1,4 +1,7 @@
-﻿public enum UpgradeType
+﻿using System;
+
+[Serializable]
+public enum UpgradeType
 {
     Engine,
     FuelTank,

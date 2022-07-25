@@ -88,7 +88,7 @@ public class CarData : ScriptableObject
     {
         CheckClearData();
         _carcassUpgrade = _carcassUpgrade.Next;
-        _carHP = CountValue(_clearData.CarHP,_carcassUpgrade.CountSummaryBoost());
+        _carMaxHP = CountValue(_clearData.CarHP,_carcassUpgrade.CountSummaryBoost());
         return _carcassUpgrade.Cost;
     }
     public int UpgradeEngine()
@@ -128,6 +128,13 @@ public class CarData : ScriptableObject
     public void Repair()
     {
         _carHP = (int)Mathf.Round(CarMaxHP);
+        PlayerDataHub.instance.Save();
+    }
+    public void PartRepair()
+    {
+        _carHP += (int)Mathf.Round(CarMaxHP/2);
+        if(_carHP>_carMaxHP)
+            _carHP = _carMaxHP;
         PlayerDataHub.instance.Save();
     }
     private static int CountValue(float value,float boost)

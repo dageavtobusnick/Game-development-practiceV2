@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheels 4
   m_EditorClassIdentifier: 
   _level: 4
-  _cost: 0
+  _cost: 1
   _adhesionBoost: 0.2
   _next: {fileID: 11400000, guid: 0fa499f96dc0f8a46901f0177bb5e2be, type: 2}
   _previous: {fileID: 11400000, guid: 8091d12aea2bf2248a502572b635f9a9, type: 2}
