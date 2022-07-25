@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarLoadList: {fileID: 11400000, guid: 72a5f184e0f3d19448b7d64f5151e109, type: 2}
+  BonusLoadList: {fileID: 11400000, guid: 809ee2826289cbd49ad6db00728f2559, type: 2}
   PlayerData: {fileID: 11400000, guid: 00639dcc1df56b94c950600c78f5f2aa, type: 2}
