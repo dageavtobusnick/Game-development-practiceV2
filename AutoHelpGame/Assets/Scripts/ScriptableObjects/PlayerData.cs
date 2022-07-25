@@ -32,6 +32,10 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private int _lootBoxCount;
     [SerializeField]
+    private int _fullRepairCost;
+    [SerializeField]
+    private int _partRepairCost;
+    [SerializeField]
     private List<CarData> _cars;
     [SerializeField]
     [HideInInspector]
@@ -42,6 +46,8 @@ public class PlayerData : ScriptableObject
     public int CoinsCount { get => _coinsCount; }
     public int LootBoxCount { get => _lootBoxCount; }
     public CarData TotalCar { get => _totalCar; }
+    public int FullRepairCost { get => _fullRepairCost; }
+    public int PartRepairCost { get => _partRepairCost; }
 
     public event Action<int> CoinsCountChanged;
 
@@ -87,6 +93,21 @@ public class PlayerData : ScriptableObject
     {
         return _cars;
     }
+    public void FullRepair()
+    {
+        _totalCar.Repair();
+        _coinsCount -= _fullRepairCost;
+        CoinsCountChanged?.Invoke(CoinsCount);
+        PlayerDataHub.instance.Save();
+    }
+    public void PartRepair()
+    {
+        _totalCar.PartRepair();
+        _coinsCount -= _partRepairCost;
+        CoinsCountChanged?.Invoke(CoinsCount);
+        PlayerDataHub.instance.Save();
+
+    }
     public PlayerSaveData Save()
     {
         return new PlayerSaveData(CoinsCount,LootBoxCount,_cars.Select(x=>x.SaveData()).ToArray(),_bonuses?.Select(x=>x.SaveData()).ToArray());
@@ -104,22 +125,23 @@ public class PlayerData : ScriptableObject
         switch (type)
         {
             case UpgradeType.Engine:
-                _coinsCount+= _totalCar.UpgradeEngine();
+                _coinsCount-= _totalCar.UpgradeEngine();
                 break;
             case UpgradeType.Transmission:
-                _coinsCount+= _totalCar.UpgradeTransmission();
+                _coinsCount-= _totalCar.UpgradeTransmission();
                 break;
             case UpgradeType.HP:
-                _coinsCount+= _totalCar.UpgradeCarcass();
+                _coinsCount-= _totalCar.UpgradeCarcass();
                 break;
             case UpgradeType.FuelTank:
-                _coinsCount+= _totalCar.UpgradeFuelTank();
+                _coinsCount-= _totalCar.UpgradeFuelTank();
                 break;
             case UpgradeType.Wheels:
-                _coinsCount+= _totalCar.UpgradeWheels();
+                _coinsCount-= _totalCar.UpgradeWheels();
                 break;
 
         }
+        CoinsCountChanged?.Invoke(CoinsCount);
         PlayerDataHub.instance.Save();
     }    
 }

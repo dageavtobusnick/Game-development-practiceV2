@@ -21,6 +21,7 @@ public class HPScript : MonoBehaviour
         {
             _carData = car.CarData;
             HPUpdated += _carData.UpdateHP;
+            _maxHP = (int)Mathf.Round(car.CarData.CarMaxHP);
         }
         HP = MaxHP;
     }

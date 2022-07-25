@@ -14,6 +14,8 @@ public class TransmissionUpgrade : BaseUpgrade
     public float SpeedBoost { get => _speedBoost;}
     public TransmissionUpgrade Next { get => _next; }
     public TransmissionUpgrade Previous { get => _previous; }
+    public override bool IsUpgradeable => _next != null;
+    public override int NextCost => (int)_next?.Cost;
 
     public float CountSummaryBoost()
     {

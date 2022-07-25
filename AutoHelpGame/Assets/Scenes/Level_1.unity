@@ -230,9 +230,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -16.344244, y: -5.7866483}
-  - {x: -16.10709, y: -4.9534774}
-  - {x: -13.948357, y: 1.0575602}
+  - {x: -16.34413, y: -5.7866626}
+  - {x: -16.10708, y: -4.953454}
+  - {x: -13.948357, y: 1.0575607}
   - {x: -13.60881, y: 1.2664455}
   - {x: -10.130011, y: 1.626022}
   - {x: -7.7933664, y: 1.8608806}
@@ -314,9 +314,9 @@ EdgeCollider2D:
   - {x: 54.226063, y: -2.9097934}
   - {x: 57.178196, y: -14.363367}
   - {x: 56.749172, y: -14.80621}
-  - {x: -14.566702, y: -6.01078}
-  - {x: -15.487043, y: -5.8972735}
-  - {x: -16.344244, y: -5.7866483}
+  - {x: -14.566589, y: -6.010793}
+  - {x: -15.486931, y: -5.8972874}
+  - {x: -16.34413, y: -5.7866626}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -511,8 +511,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 20.447569, y: -5.9549694, z: 0}
-    m_Extent: {x: 36.804226, y: 8.91181, z: 0}
+    m_Center: {x: 20.447628, y: -5.9549694, z: 0}
+    m_Extent: {x: 36.80417, y: 8.91181, z: 0}
 --- !u!1001 &83040610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1204,7 +1204,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &716323134
 MonoBehaviour:
@@ -1234,6 +1234,11 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+--- !u!1 &764914446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5814402746024588393, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
+  m_PrefabInstance: {fileID: 3399804834853800603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &774598001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1379,7 +1384,7 @@ Transform:
   - {fileID: 1930881735}
   - {fileID: 874729403}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &805805786
 PrefabInstance:
@@ -1758,6 +1763,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5817293046331106333, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
   m_PrefabInstance: {fileID: 3399804834853800603}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &952674608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764914446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8269dcdb8552824aab71097e3c13758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseDamagePerV: 30
+  _damageKD: 1
+--- !u!114 &952674609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764914446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933c0d83e16366643899fc2e015bdfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHP: 0
 --- !u!1 &954118100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2631,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 952674600}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1498527675
 GameObject:
@@ -2782,9 +2814,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -16.344244, y: -5.7866483}
-  - {x: -16.10709, y: -4.9534774}
-  - {x: -13.948357, y: 1.0575602}
+  - {x: -16.34413, y: -5.7866626}
+  - {x: -16.10708, y: -4.953454}
+  - {x: -13.948357, y: 1.0575607}
   - {x: -13.60881, y: 1.2664455}
   - {x: -10.130011, y: 1.626022}
   - {x: -7.7933664, y: 1.8608806}
@@ -2866,9 +2898,9 @@ EdgeCollider2D:
   - {x: 54.226063, y: -2.9097934}
   - {x: 57.178196, y: -14.363367}
   - {x: 56.749172, y: -14.80621}
-  - {x: -14.566702, y: -6.01078}
-  - {x: -15.487043, y: -5.8972735}
-  - {x: -16.344244, y: -5.7866483}
+  - {x: -14.566589, y: -6.010793}
+  - {x: -15.486931, y: -5.8972874}
+  - {x: -16.34413, y: -5.7866626}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -3063,8 +3095,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 20.447569, y: -5.9549694, z: 0}
-    m_Extent: {x: 36.804226, y: 8.91181, z: 0}
+    m_Center: {x: 20.447628, y: -5.9549694, z: 0}
+    m_Extent: {x: 36.80417, y: 8.91181, z: 0}
 --- !u!4 &1563012763
 Transform:
   m_ObjectHideFlags: 0
@@ -4912,7 +4944,7 @@ Transform:
   m_Children:
   - {fileID: 210236474}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2134204578
 PrefabInstance:
@@ -5146,6 +5178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4051886303850667985, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5814402746024588393, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
       propertyPath: m_Name
       value: car_spor
@@ -5200,7 +5236,7 @@ PrefabInstance:
       objectReference: {fileID: 1431216020}
     - target: {fileID: 5817293046331106333, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5817293046331106333, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5254,5 +5290,9 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 8845890711507939967, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}
+      propertyPath: _carHP
+      value: 
+      objectReference: {fileID: 952674609}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19a1f43981d96c4e911c20e88bbf9ad, type: 3}

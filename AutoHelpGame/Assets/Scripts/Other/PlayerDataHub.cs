@@ -27,15 +27,8 @@ public class PlayerDataHub : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        CarLoadList = Instantiate(CarLoadList);
-        CarLoadList.ReloadData();
         PlayerData = Instantiate(PlayerData);
         PlayerData.ReloadCarData();
-        foreach(var counter in FindObjectsOfType<CoinCounter>())
-        {
-            PlayerData.CoinsCountChanged += counter.UpdageCoinsInfo;
-            counter.LockDestroy();
-        }
         if(_loadOnAwake)
             Load();
     }
