@@ -2269,15 +2269,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeEngineText: {fileID: 777004567}
-  ButtonUpgradeEngine: {fileID: 1925465623}
+  ButtonUpgradeEngine: {fileID: 1925465625}
   UpgradeTransmissionText: {fileID: 1953860641}
-  ButtonUpgradeTransmission: {fileID: 1015693510}
+  ButtonUpgradeTransmission: {fileID: 1015693512}
   UpgradeWheelsText: {fileID: 1007508193}
-  ButtonUpgradeWheels: {fileID: 1069753798}
+  ButtonUpgradeWheels: {fileID: 1069753800}
   UpgradeBodyText: {fileID: 888699080}
-  ButtonUpgradeBody: {fileID: 1781849143}
+  ButtonUpgradeBody: {fileID: 1781849145}
   UpgradeTankFuelText: {fileID: 1520611518}
-  ButtonUpgradeTankFuel: {fileID: 1839868176}
+  ButtonUpgradeTankFuel: {fileID: 1839868178}
 --- !u!1 &1781849143
 GameObject:
   m_ObjectHideFlags: 0

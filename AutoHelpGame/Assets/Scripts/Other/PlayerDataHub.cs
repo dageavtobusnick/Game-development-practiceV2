@@ -45,7 +45,7 @@ public class PlayerDataHub : MonoBehaviour
         var bf = new BinaryFormatter();
         var dataPath = Application.persistentDataPath;
         await Task.Run(()=>Directory.CreateDirectory(dataPath+_savePath));
-        using (var fs = File.Open(dataPath + _savePathName, FileMode.Create))
+        using (var fs = File.Create(dataPath + _savePathName))
         {
             await Task.Run(() => bf.Serialize(fs, saveData));
         }

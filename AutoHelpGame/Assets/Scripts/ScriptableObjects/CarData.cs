@@ -148,7 +148,7 @@ public class CarData : ScriptableObject
         while (FuelTankUpgrade.Level < saveData.FuelTankLevel)
             UpgradeFuelTank(); 
         while (TransmissionUpgrade.Level < saveData.Transmissionlevel)
-            UpgradeCarcass();
+            UpgradeTransmission();
         while (WheelsUpgrade.Level < saveData.WheelsLevel)
             UpgradeWheels();
         return this;
