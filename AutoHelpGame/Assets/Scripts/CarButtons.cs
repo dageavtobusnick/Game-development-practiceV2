@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarButtons : MonoBehaviour
@@ -13,11 +11,6 @@ public class CarButtons : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ExternalEngineTurnOn(bool forward)
     {

@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class CoinCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
     private  TextMeshProUGUI _textMeshProUGUI;
     private bool _isReadyToDestroy=true;
     private int _localCoins;

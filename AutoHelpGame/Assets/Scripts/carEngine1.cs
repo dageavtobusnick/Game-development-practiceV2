@@ -21,22 +21,11 @@ public class carEngine1 : MonoBehaviour
     [SerializeField]
     Animator frontTireAnim;
 
-    //boost
-    void Awake()
-    {
-    
-    }
-    // Start is called before the first frame update
     void Start()
     {
         //carBody.velocity=new Vector3(100f, 0, 0);;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void FixedUpdate()
     {
         backTireAnim.speed = ( (speed-15)/35)*1;

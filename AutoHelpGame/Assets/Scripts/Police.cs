@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,15 +40,13 @@ public class Police : MonoBehaviour
             _isRegistered = true;
         }
     }
-    // Start is called before the first frame update
+    public void StopPause()
+    {
+        Time.timeScale = 1;
+    }
+
     void Start()
     {
         _banner=_bannerObj.GetComponent<Banner>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

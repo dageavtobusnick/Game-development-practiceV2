@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec127c2ad7d499f489e653af9b524c37, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  _coinsCount: 2
+  _coinsCount: 0
   _lootBoxCount: 0
   _fullRepairCost: 2
   _partRepairCost: 1
+  _lootboxCost: 3
   _cars:
   - {fileID: 11400000, guid: 340e3757c8a1e984f828d4d6ee43d5a5, type: 2}
   - {fileID: 11400000, guid: 52f114fcbad9f694b96daafb12a08311, type: 2}

@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using static PlayerData;
 
 public class PlayerDataHub : MonoBehaviour
@@ -12,6 +12,7 @@ public class PlayerDataHub : MonoBehaviour
     public CarLoadList CarLoadList;
     public BonusLoadList BonusLoadList;
     public PlayerData PlayerData;
+    public event Action SaveDeleted;
     [SerializeField]
     private bool _loadOnAwake;
     private static readonly string _savePath= "/Saves"; 
@@ -29,8 +30,10 @@ public class PlayerDataHub : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         PlayerData = Instantiate(PlayerData);
         PlayerData.ReloadCarData();
+        SaveDeleted += FindObjectOfType<MenuManager>().LoadMainMenu;
         if(_loadOnAwake)
             Load();
+        Save();
     }
     public async void Save()
     {
@@ -38,11 +41,37 @@ public class PlayerDataHub : MonoBehaviour
         var bf = new BinaryFormatter();
         var dataPath = Application.persistentDataPath;
         await Task.Run(()=>Directory.CreateDirectory(dataPath+_savePath));
-        using (var fs = File.Create(dataPath + _savePathName))
+        try
         {
-            await Task.Run(() => bf.Serialize(fs, saveData));
+            using (var fs = File.Create(dataPath + _savePathName))
+            {
+                await Task.Run(() => bf.Serialize(fs, saveData));
+            }
+            Debug.Log("DataSaved");
         }
-        Debug.Log("DataSaved");
+        finally
+        {
+
+        }
+    }
+    public void DeleteSave()
+    {;
+        var dataPath = Application.persistentDataPath;
+        try
+        {
+            if (File.Exists(dataPath + _savePathName))
+            {
+                File.Delete(dataPath + _savePathName);
+                Debug.Log("DataDeleted");
+                instance = null;
+                SaveDeleted?.Invoke();
+                Destroy(gameObject);
+            }
+        }
+        finally
+        {
+
+        }
     }
     public void Load()
     {
@@ -50,12 +79,15 @@ public class PlayerDataHub : MonoBehaviour
         var dataPath = Application.persistentDataPath;
         try
         {
-            using (var fs = File.Open(dataPath + _savePathName, FileMode.Open))
+            if (File.Exists(dataPath + _savePathName))
             {
-                var data=(PlayerSaveData) bf.Deserialize(fs);
-                PlayerData.LoadData(data);
+                using (var fs = File.Open(dataPath + _savePathName, FileMode.Open))
+                {
+                    var data = (PlayerSaveData)bf.Deserialize(fs);
+                    PlayerData.LoadData(data);
+                }
+                Debug.Log("DataLoaded");
             }
-            Debug.Log("DataLoaded");
         }
         finally
         {

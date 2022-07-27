@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -36,6 +35,8 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private int _partRepairCost;
     [SerializeField]
+    private int _lootboxCost;
+    [SerializeField]
     private List<CarData> _cars;
     [SerializeField]
     [HideInInspector]
@@ -48,12 +49,20 @@ public class PlayerData : ScriptableObject
     public CarData TotalCar { get => _totalCar; }
     public int FullRepairCost { get => _fullRepairCost; }
     public int PartRepairCost { get => _partRepairCost; }
+    public int LootboxCost { get => _lootboxCost; }
 
     public event Action<int> CoinsCountChanged;
 
     public void AddLootBoxes(int count) 
     { 
         _lootBoxCount += count;
+        _coinsCount -= _lootboxCost*count;
+        CoinsCountChanged?.Invoke(_coinsCount);
+        PlayerDataHub.instance.Save();
+    }
+    public void SpinWheel()
+    {
+        _lootBoxCount--;
         PlayerDataHub.instance.Save();
     }
     public void AddCoins(int count)
@@ -98,14 +107,12 @@ public class PlayerData : ScriptableObject
         _totalCar.Repair();
         _coinsCount -= _fullRepairCost;
         CoinsCountChanged?.Invoke(CoinsCount);
-        PlayerDataHub.instance.Save();
     }
     public void PartRepair()
     {
         _totalCar.PartRepair();
         _coinsCount -= _partRepairCost;
         CoinsCountChanged?.Invoke(CoinsCount);
-        PlayerDataHub.instance.Save();
 
     }
     public PlayerSaveData Save()

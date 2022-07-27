@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,9 +19,9 @@ public class Stock : MonoBehaviour
     {
         obj.SetActive(false);
     }
-    public void Buy1Wheel()
+    public void Buy1Wheel(int count)
     {
-        WheelSpin.amountWheel++;
-        PlayerPrefs.SetInt("AviableWheel", WheelSpin.amountWheel);
+        PlayerDataHub.instance.PlayerData.AddLootBoxes(count);
     }
 }
+

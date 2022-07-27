@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -46,7 +44,7 @@ public class WheelSpin : MonoBehaviour
     public float subSpeed;
     private bool isSpinning = false;
     public TextMeshProUGUI mytext;
-    public static  int amountWheel = 1;
+    //public static  int amountWheel = 1;
     public TextMeshProUGUI AviableWheel;
 
     [SerializeField]
@@ -97,28 +95,15 @@ public class WheelSpin : MonoBehaviour
                 spawned.GetComponent<TextMeshProUGUI>().text = rewardList.GetInList(i);
             
             }
-        }
-        if (PlayerPrefs.HasKey("AviableWheel"))
-        {
-
-            amountWheel = PlayerPrefs.GetInt("AviableWheel");
-        }
-        
-       
+        }  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.HasKey("AviableWheel"))
-        {
 
-            AviableWheel.text = "Доступно : " + PlayerPrefs.GetInt("AviableWheel"); ;
-        }
-        else
-        {
-            AviableWheel.text = "Доступно : " + 1;
-        }
+        AviableWheel.text = "Доступно : " +PlayerDataHub.instance.PlayerData.LootBoxCount;
+
         if (isSpinning)
         {
             transform.Rotate(0,0,-genSpeed,Space.World);
@@ -137,7 +122,7 @@ public class WheelSpin : MonoBehaviour
             
             genSpeed = 0;
             isSpinning = false;
-            if (amountWheel <= 0)
+            if (PlayerDataHub.instance.PlayerData.LootBoxCount <= 0)
             {
                 spinButton.interactable = false;
             }
@@ -200,9 +185,6 @@ public class WheelSpin : MonoBehaviour
         spinButton.interactable=false;
         getReward=true;
         finishedReward = false;
-        amountWheel--;
-        PlayerPrefs.SetInt("AviableWheel", amountWheel);
-
-
+        PlayerDataHub.instance.PlayerData.SpinWheel();
     }
 }

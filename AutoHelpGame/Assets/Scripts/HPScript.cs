@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HPScript : MonoBehaviour
@@ -16,12 +14,11 @@ public class HPScript : MonoBehaviour
 
     void Start()
     {
-        var car = GetComponent<Car>();
-        if (car != null)
+        if (TryGetComponent<Car>(out var car))
         {
-            _carData = car.CarData;
-            HPUpdated += _carData.UpdateHP;
-            _maxHP = (int)Mathf.Round(car.CarData.CarMaxHP);
+            _carData = PlayerDataHub.instance.PlayerData.TotalCar;
+            HPUpdated +=_carData.UpdateHP;
+            _maxHP = (int)Mathf.Round(_carData.CarMaxHP);
             HP = _carData.CarHP;
             var bar = FindObjectOfType<HpBarScript>();
             bar.Init(MaxHP);

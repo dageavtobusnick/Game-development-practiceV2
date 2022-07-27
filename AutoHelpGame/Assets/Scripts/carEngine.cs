@@ -36,7 +36,7 @@ public class carEngine : Car
         FuelBar =  GameObject.FindWithTag("FuelBar").GetComponent<Slider>();
         
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         InitalSpeed = Speed;
@@ -44,9 +44,9 @@ public class carEngine : Car
         if (PlayerDataHub.instance != null)
             CarData = PlayerDataHub.instance.PlayerData.TotalCar;
         FuelBar.maxValue = FuelMaxTank;
+        FuelTank = FuelMaxTank;
     }
 
-    // Update is called once per frame
     void Update()
     {
        // Debug.Log(CarBody.velocity);
